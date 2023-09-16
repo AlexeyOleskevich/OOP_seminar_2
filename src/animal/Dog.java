@@ -1,7 +1,5 @@
 package animal;
 
-import clinic.Illable;
-
 import java.time.LocalDate;
 import java.util.List;
 
