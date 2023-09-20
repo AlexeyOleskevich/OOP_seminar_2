@@ -1,30 +1,33 @@
 package animal;
 
-import clinic.Illable;
+import clinic.Doctor;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class Animal implements Illable {
+public class Animal{
     protected String name;
     protected double weight;
     protected Owner owner;
+    protected Doctor attendingDoctor;
     protected LocalDate birthDay;
     protected List<Vaccination> vaccinations;
     protected Color color;
     protected final String TYPE = this.getClass().getSimpleName();
 
-    public Animal(String name, double weight, Owner owner, LocalDate birthDay, List<Vaccination> vaccinations, Color color) {
+    public Animal(String name, double weight, Owner owner, LocalDate birthDay,
+                  List<Vaccination> vaccinations, Color color, Doctor attendingDoctor) {
         this.name = name;
         this.weight = weight;
         this.owner = owner;
         this.birthDay = birthDay;
         this.vaccinations = vaccinations;
         this.color = color;
+        this.attendingDoctor = attendingDoctor;
     }
 
-    public Animal(String name, double weight, Owner owner, LocalDate birthDay, Color color) {
-        this(name, weight, owner, birthDay, null, color);
+    public Animal(String name, double weight, Owner owner, LocalDate birthDay, Color color, Doctor attendingDoctor) {
+        this(name, weight, owner, birthDay, null, color, attendingDoctor);
     }
 
     public Animal(String name) {
@@ -117,8 +120,4 @@ public class Animal implements Illable {
         return TYPE;
     }
 
-    @Override
-    public void heal() {
-        System.out.println("Ветеринар лечит " + this.TYPE);
-    }
 }

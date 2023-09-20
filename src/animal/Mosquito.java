@@ -1,7 +1,5 @@
 package animal;
 
-import clinic.Flyable;
-
 public class Mosquito extends Animal implements Flyable {
     private double speed;
 
@@ -12,7 +10,12 @@ public class Mosquito extends Animal implements Flyable {
     }
 
     @Override
-    public double getFlySpeed() {
-        return 15.0;
+    public void fly() {
+        System.out.println(this.getTYPE() + " is flying.");
+    }
+
+    @Override
+    public double getSpeed() {
+        return 12.0;
     }
 }

@@ -1,9 +1,16 @@
 package clinic;
+public abstract class Human{
+    private String name;
+    private double weight;
+    private int tail;
 
-public class Human implements Illable {
+    public Human(String name, double weight, int tail) {
+        this.name = name;
+        this.weight = weight;
+        this.tail = tail;
+    }
 
-    @Override
-    public void heal() {
-
+    public String getName() {
+        return this.name;
     }
 }
